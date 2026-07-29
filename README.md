@@ -53,7 +53,7 @@ using representations of both natural and optimized images we retrieve the topk 
     </td>
     <td width="50%" align="center">
       <img src="assets/sample_stimuli.png" width="100%"><br>
-      <em>samples from topk retrieved natural images</em>
+      <em>Top: optimized. Middle: retrieved naturals. Bottom: random naturals</em>
     </td>
   </tr>
 </table>
