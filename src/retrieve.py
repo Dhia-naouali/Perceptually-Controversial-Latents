@@ -30,7 +30,7 @@ def embed_images(
     with torch.no_grad():
         for images, _ in tqdm(loader):
             images = images.cuda(non_blocking=True)
-            embs = model.encode(images)
+            embs = model(images)
             embeddings.append(embs.cpu())
 
     return torch.cat(embeddings, dim=0)
@@ -43,7 +43,7 @@ def embed_optimized_images(
     model.eval()
     with torch.no_grad():
 
-        return model.encode(
+        return model(
             optimized_images.cuda(non_blocking=True)
         ).cpu()
     

@@ -285,9 +285,15 @@ def _optimize_flux(config, extractor, flux, run):
 def cross_evaluate(images):
     results = {}
     for extractor_name, extractor in build_all_extractors().items():
-        feats = extractor(images.cuda())
+        images = images.cuda()
         if extractor_name == "classifier":
-            feats = F.softmax(feats, dim=1)
+            feature_map = extractor.model.forward_features(images)
+            feats = extractor.model.forward_head(
+                feature_map,
+                pre_logits=True,
+            )
+        else:
+            feats = extractor(images)
         mpcd = compute_mpcd(feats)
         results[extractor_name] = mpcd
 
