@@ -47,12 +47,12 @@ using representations of both natural and optimized images we retrieve the topk 
 
 <table>
   <tr>
-    <td width="50%" align="center">
+    <td width="35%" align="center">
       <img src="assets/phase3__retrieval.png" width="100%"><br>
       <em>fake and real in contrastive space</em>
     </td>
-    <td width="50%" align="center">
-      <img src="assets/sample_stimuli.png" width="100%"><br>
+    <td width="65%" align="center">
+      <img src="assets/sample_grid.png" width="100%"><br>
       <em>Top: optimized. Middle: retrieved naturals. Bottom: random naturals</em>
     </td>
   </tr>
